@@ -1,0 +1,11 @@
+type Project {
+  id: ID!
+  projectName: String!
+  projectDescription: String!
+  task: [Task]
+  projectManager: String
+  members: [String]
+  createdBy: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}

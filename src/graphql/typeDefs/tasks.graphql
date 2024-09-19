@@ -1,0 +1,11 @@
+type Task {
+  id: ID!
+  taskName: String!
+  taskDescription: String
+  createdBy: String!
+  assignedTo: [String]
+  taskStartsAt: DateTime
+  taskEndsAt: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+}

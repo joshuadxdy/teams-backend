@@ -1,0 +1,61 @@
+scalar DateTime
+
+type User {
+  id: ID!
+  email: String!
+  fullName: String
+  username: String
+  password: String
+  role: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type AuthPayload {
+  accessToken: String!
+  user: User!
+}
+
+type RegistrationPayload {
+  message: String!
+}
+
+input LoginInput {
+  username: String
+  email: String
+  password: String!
+}
+
+input RegistrationInput {
+  fullName: String
+  username: String
+  email: String!
+  role: String
+  password: String!
+  phoneNumber: String
+}
+
+input EditUserData {
+  email: String
+  fullName: String
+  username: String
+  password: String
+  role: String
+}
+
+input EditUserInput {
+  id: ID!
+  data: EditUserData
+}
+
+type Mutation {
+  login(input: LoginInput!): AuthPayload
+  userRegistration(input: RegistrationInput!): RegistrationPayload
+  deleteUser(id: ID!): User
+  editUser(input: EditUserInput!): User
+}
+
+type Query {
+  users: [User]
+  user(id: ID!): User
+}

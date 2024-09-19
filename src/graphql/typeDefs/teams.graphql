@@ -1,0 +1,10 @@
+type Team {
+  id: ID!
+  teamName: String!
+  teamDescription: String
+  members: [String]
+  teamLead: String
+  createdBy: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
